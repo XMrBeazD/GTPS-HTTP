@@ -10,7 +10,9 @@ credit to https://github.com/Alexander9673
 
 # About GTPS-HTTP
 this http only accept ``growtopia1.com`` and ``growtopia2.com`` and will block except that domain. if you would to use .apk and need domain you can add it like this.
+
+
 ``if (req.headers["host"] == 'Your Domain){
-				console.log(`[${req.url}]: ${req.connection.remoteAddress} ${req.headers["host"]}`)
+console.log(`[${req.url}]: ${req.connection.remoteAddress} ${req.headers["host"]}`)
 			}``
       
