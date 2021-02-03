@@ -6,9 +6,10 @@ trying to sell or showing off this code is the same as a brain disorder
 
 # How to Use
 1. cd GTPS-HTTP
-2. npm install @types/node --save
-3. Create folder with name `assets`
-4. ts-node index.ts
+2. npm install typescript ts-node --global
+3. npm install @types/node --save
+4. Create folder with name `assets`
+5. ts-node index.ts
 
 # About GTPS-HTTP
 this http only accept ``growtopia1.com`` and ``growtopia2.com`` and will block except that domain. if you would to use .apk and need domain you can add it like this.
