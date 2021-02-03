@@ -15,7 +15,7 @@ this http only accept ``growtopia1.com`` and ``growtopia2.com`` and will block e
 
 ```
 if (req.headers["host"] == 'xxx'){
-				console.log(`[${req.url}]: ${req.connection.remoteAddress} ${req.headers["host"]}`)
+console.log(`[${req.url}]: ${req.connection.remoteAddress} ${req.headers["host"]}`)
 			}
 			
 ```
