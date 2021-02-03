@@ -1,6 +1,6 @@
 # GTPS-HTTP
 simple http for gtps. This http only for growtopia http server.
-credit to https://github.com/Alexander9673
+credit to https://github.com/Alexander9673 .
 trying to sell or showing off this code is the same as a brain disorder
 
 # How to Use
