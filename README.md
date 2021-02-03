@@ -17,6 +17,9 @@ this http only accept ``growtopia1.com`` and ``growtopia2.com`` and will block e
 if (req.headers["host"] == 'xxx'){
 				console.log(`[${req.url}]: ${req.connection.remoteAddress} ${req.headers["host"]}`)
 			}
+			
+```
+
 xxx = your Domain (if you would to use .apk)
 		
       
