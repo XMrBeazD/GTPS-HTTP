@@ -37,13 +37,21 @@ let server = http.createServer(function(req, res) {
         res.writeHead(200, { 'Content-Type': 'text/html' });
         res.write(packet, (err) => {
 			if (req.headers["host"] == 'growtopia1.com'){
-			console.log(`${req.url}: ${req.connection.remoteAddress} ${req.headers["host"]}`)
+				if(req.method == "POST"){
+			console.log(`connection from: ${req.connection.remoteAddress} /${req.headers["host"]}`)
 		}
-			if (req.headers["host"] == 'growtopia2.com'){
-				console.log(`${req.url}: ${req.connection.remoteAddress} ${req.headers["host"]}`)
 			}
+			if (req.headers["host"] == 'growtopia2.com'){
+				if(req.method == "POST"){
+				console.log(`connection from: ${req.connection.remoteAddress} /${req.headers["host"]}`)
+				}
+			}
+			//if (req.headers["host"] == 'xxx'){
+				//if(req.method == "POST"){
+				//console.log(`${req.url}: ${req.connection.remoteAddress} ${req.headers["host"]}`)
+				//}
+			//}
 			else {
-                //console.log(`Unknown Request: ${req.connection.remoteAddress}`)
                 req.connection.destroy();
             }
             if (err)
@@ -82,8 +90,7 @@ let server = http.createServer(function(req, res) {
             res.destroy();
         });
     } else {
-        console.log(`Connection blocked: ${req.connection.remoteAddress}`); 
-        res.destroy();
+        req.destroy();
     }
 });
 
