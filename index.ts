@@ -2,7 +2,7 @@ import * as http from "http";
 import fs = require("fs");
 
 const blacklist: Map<string, number> = new Map();
-const packet: string = "server|139.99.124.208\nport|17091\ntype|1\n#maint|Mainetrance message (Not used for now) -- NodeJS-GTPS\n\nbeta_server|127.0.0.1\nbeta_port|17091\n\nbeta_type|1\nmeta|localhost\nRTENDMARKERBS1001";
+const packet: string = "server|127.0.0.1\nport|17091\ntype|1\n#maint|Mainetrance message (Not used for now) -- NodeJS-GTPS\n\nbeta_server|127.0.0.1\nbeta_port|17091\n\nbeta_type|1\nmeta|localhost\nRTENDMARKERBS1001";
 const files: Map<string, Buffer> = new Map();
 
 for (let file of fs.readdirSync(`${__dirname}/assets`)) {
@@ -37,10 +37,10 @@ let server = http.createServer(function(req, res) {
         res.writeHead(200, { 'Content-Type': 'text/html' });
         res.write(packet, (err) => {
 			if (req.headers["host"] == 'growtopia1.com'){
-			console.log(`[${req.url}]: ${req.connection.remoteAddress} ${req.headers["host"]}`)
+			console.log(`${req.url}: ${req.connection.remoteAddress} ${req.headers["host"]}`)
 		}
 			if (req.headers["host"] == 'growtopia2.com'){
-				console.log(`[${req.url}]: ${req.connection.remoteAddress} ${req.headers["host"]}`)
+				console.log(`${req.url}: ${req.connection.remoteAddress} ${req.headers["host"]}`)
 			}
 			else {
                 //console.log(`Unknown Request: ${req.connection.remoteAddress}`)
@@ -82,7 +82,7 @@ let server = http.createServer(function(req, res) {
             res.destroy();
         });
     } else {
-        //console.log(`Connection blocked: ${req.connection.remoteAddress}`); 
+        console.log(`Connection blocked: ${req.connection.remoteAddress}`); 
         res.destroy();
     }
 });
@@ -95,4 +95,5 @@ server.on("connection", (socket) => {
 
 server.on("listening", () => console.log(`HTTP Server now up.
 Coded by Alexander9673 (C)
-remake by Galvin`));
+remake by Galvin
+trying to sell this source amounts to brain failure `));
