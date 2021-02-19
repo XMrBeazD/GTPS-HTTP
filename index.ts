@@ -102,5 +102,4 @@ server.on("connection", (socket) => {
 
 server.on("listening", () => console.log(`HTTP Server now up.
 Coded by Alexander9673 (C)
-remake by Galvin
-trying to sell this source amounts to brain failure `));
+remake by Galvin`));
